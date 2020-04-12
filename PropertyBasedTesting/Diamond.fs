@@ -1,4 +1,6 @@
-﻿module Diamond
+﻿namespace PropertyBasedTesting
+
+module Diamond =
 
     open System
 

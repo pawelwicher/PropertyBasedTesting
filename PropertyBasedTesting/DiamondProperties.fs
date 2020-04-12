@@ -1,4 +1,6 @@
-﻿module DiamondProperties
+﻿namespace PropertyBasedTesting
+
+module DiamondProperties =
 
     open System
     open FsCheck
@@ -12,7 +14,7 @@
     type DiamondPropertyAttribute() =
         inherit PropertyAttribute(Arbitrary = [| typeof<Letters> |])
 
-    [<Property>]
+    [<DiamondProperty>]
     let ``Diamond is non-empty`` (letter : char) =
         let actual = Diamond.make letter
         not (String.IsNullOrWhiteSpace actual)
